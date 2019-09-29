@@ -9,23 +9,32 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        @includeWhen(!request()->is('login'), 'partials.navbar')
+    <div id="app" class="pf-c-page">
+        {{-- @includeWhen(!request()->is('login'), 'partials.navbar') --}}
+        @include('partials.header')
 
-        <main class="py-4">
-            @yield('content')
+        @includeWhen(!request()->is('login') && !request()->is('register'), 'partials.sidebar')
+        <main role="main" class="pf-c-page__main" tabindex="-1">
+            @includeWhen(!request()->is('login') && !request()->is('register'), 'partials.section-title')
+            <section class="pf-c-page__main-section">
+                <div class="pf-c-content">
+                    @yield('content')
+                </div>
+            </section>
         </main>
     </div>
+
 </body>
 </html>

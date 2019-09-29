@@ -23,6 +23,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $title = "Dashboard";
+        $description = "You are logged in!";
+
+        return view('home', compact('title', 'description'));
     }
 }

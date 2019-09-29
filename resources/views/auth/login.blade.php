@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="pf-u-mt-xl"></div>
 <div class="pf-l-bullseye">
     <div class="pf-l-bullseye__item">
         <div class="pf-c-card">
