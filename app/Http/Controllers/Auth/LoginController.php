@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Auth;
 use Socialite;
 use App\User;
 use App\Http\Controllers\Controller;
@@ -64,6 +65,8 @@ class LoginController extends Controller
             'password' => $user->token,
         ]);
 
-        $this->auth->login($user, true);
+        Auth::login($user);
+
+        return redirect('/home');
     }
 }
