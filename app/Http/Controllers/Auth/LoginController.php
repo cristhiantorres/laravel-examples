@@ -63,7 +63,7 @@ class LoginController extends Controller
 
         $user = User::firstOrCreate([
             'email' => $user->email,
-            'name' => $user->nickname
+            'name' => $user->nickname ?? $user->name,
         ]);
 
         $this->auth->login($user, true);
