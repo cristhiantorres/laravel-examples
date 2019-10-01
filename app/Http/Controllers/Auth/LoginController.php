@@ -45,7 +45,6 @@ class LoginController extends Controller
      */
     public function redirectToProvider()
     {
-        dd(config('services.github.client_id'));
         return Socialite::driver('github')->redirect();
     }
 
@@ -58,6 +57,6 @@ class LoginController extends Controller
     {
         $user = Socialite::driver('github')->user();
 
-        dd($user->token);
+        dd($user);
     }
 }
