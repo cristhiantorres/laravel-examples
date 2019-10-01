@@ -51,9 +51,9 @@
                                     {{ __('Register') }}
                                 </a>
                             @endif
-                            @if (Route::has('password.request'))
-                                <a class="pf-c-button pf-m-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
+                            @if (Route::has('login.github'))
+                                <a class="pf-c-button pf-m-link" href="{{ route('login.github') }}">
+                                    {{ __('Github') }}
                                 </a>
                             @endif
                         </div>
