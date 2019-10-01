@@ -33,7 +33,7 @@ return [
     'github' => [
         'client_id' => env('GITHUB_CLIENT_ID'),
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
-        'redirect' => route('login.github_callback'),
+        'redirect' => 'https://laravel-examples.herokuapp.com/login/github/callback',
     ]
 
 ];
