@@ -51,11 +51,12 @@
                                     {{ __('Register') }}
                                 </a>
                             @endif
-                            @if (Route::has('login.github'))
-                                <a class="pf-c-button pf-m-link" href="{{ route('login.github') }}">
-                                    {{ __('Github') }}
-                                </a>
-                            @endif
+                            <a class="pf-c-button pf-m-link" href="{{ route('login.social', 'github') }}">
+                                {{ __('Github') }}
+                            </a>
+                            <a class="pf-c-button pf-m-link" href="{{ route('login.social', 'google') }}">
+                                {{ __('Google') }}
+                            </a>
                         </div>
                     </div>
                 </form>
