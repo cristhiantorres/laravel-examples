@@ -22,5 +22,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // Socialite
 // Github
-Route::get('login/github', 'Auth\LoginController@redirectToProvider')->name('login.github');
-Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback')->name('login.github_callback');
+Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider')->name('login.social');
+Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->name('login.social_callback');
